@@ -1,6 +1,6 @@
 # Vet Clinic Database
 
-> This is a Microverse exercise on how to create, populate, and manage a relational database using postgreSQL. 
+> This is a Microverse exercise on how to create, update, delete, commit, rollback, populate, and manage a relational database using postgreSQL. 
 
 
 ## Getting Started
