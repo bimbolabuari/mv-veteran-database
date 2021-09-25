@@ -31,3 +31,25 @@ CREATE TABLE species(
   id SERIAL PRIMARY KEY,
   name VARCHAR(45)
 );
+
+CREATE TABLE vets(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(30),
+  age INT,
+  date_of_graduation DATE
+);
+
+CREATE TABLE specializations(
+  species_id INT NOT NULL,
+  vet_id INT NOT NULL,
+  FOREIGN KEY (species_id) REFERENCES species (id) ON DELETE CASCADE,
+  FOREIGN KEY (vet_id) REFERENCES vets (id) ON DELETE CASCADE
+);
+
+CREATE TABLE visits(
+  animal_id INT NOT NULL,
+  vet_id INT NOT NULL,
+  FOREIGN KEY (animal_id) REFERENCES animals (id) ON DELETE CASCADE,
+  FOREIGN KEY (vet_id) REFERENCES vets (id) ON DELETE CASCADE,
+  visit_date DATE
+);
